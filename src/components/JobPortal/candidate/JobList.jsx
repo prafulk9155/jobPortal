@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { get, post } from '../../../services/api.service';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -11,6 +12,21 @@ const navigation = [
 
 export default function JobList() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    // Example of using the GET request
+    const fetchData = async () => {
+      try {
+        const data = await get(''); // Replace 'endpoint' with the actual endpoint you want to fetch data from
+        console.log(data); // Do something with the data
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    
+
+    fetchData();
+  }, []);
 
   return (
   
