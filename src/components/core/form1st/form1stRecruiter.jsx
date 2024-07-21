@@ -9,9 +9,13 @@ const navigation = [
   { name: 'Company', href: '#' },
 ]
 
-export default function Signin() {
+export default function form1stRecruiter() {
+  
+
 return(
-<section className="bg-white">
+    <>
+
+    <section className="bg-white">
   <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
     <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
       <img
@@ -50,6 +54,7 @@ return(
     <main
       className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
     >
+      
       <div className="max-w-xl lg:max-w-3xl">
         <div className="relative -mt-16 block lg:hidden">
           <a
@@ -103,6 +108,17 @@ return(
               type="text"
               id="LastName"
               name="last_name"
+              className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+            />
+          </div>
+
+          <div className="col-span-6">
+            <label for="number" className="block text-sm font-medium text-gray-700"> Phone No. </label>
+
+            <input
+              type="tel"
+              id="number"
+              name="number"
               className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
             />
           </div>
@@ -183,5 +199,8 @@ return(
     </main>
   </div>
 </section>
+    
+    </>
+
 )
 }

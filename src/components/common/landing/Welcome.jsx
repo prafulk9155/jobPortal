@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Signin from '../../core/account/singin/Signin'
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -11,10 +12,21 @@ const navigation = [
   { name: 'Company', href: '#' },
 ]
 
+
+
 export default function WelcomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [showLoginPage, setShowLoginPage] = useState(false); // State for showing login page
+
+  const handleShowLogin = (e) => {
+    e.preventDefault(); // Prevents default link behavior
+    setShowLoginPage(!showLoginPage); // Toggles the state
+    console.log(!showLoginPage, "showLoginPage");
+  }
+
 
   return (
+    <>
     <div className="bg-white">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
@@ -45,8 +57,8 @@ export default function WelcomePage() {
               </a>
             ))}
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">""
+            <a href="#" className="text-sm font-semibold leading-6 text-gray-900"    onClick={handleShowLogin}>
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
@@ -157,5 +169,12 @@ export default function WelcomePage() {
         </div>
       </div>
     </div>
+    {showLoginPage ? (
+  <div>
+    <Signin />
+  </div>
+) : null}
+
+    </>
   )
 }
