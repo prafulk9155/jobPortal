@@ -9,7 +9,7 @@ const from1stClient = () => {
     workType: 'Software',
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e) => { 
     const { name, value } = e.target;
     setFormData({
       ...formData,
