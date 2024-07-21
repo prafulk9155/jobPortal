@@ -1,0 +1,12 @@
+/* index.css or App.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+
+html, body {
+ 
+  background: linear-gradient(135deg, #50a7c2, #b7f8db);
+ 
+}
